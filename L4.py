@@ -49,7 +49,6 @@ print("Open Key = {}".format(openKey))
 closeKey = getCloseKey(openKey, f)
 
 print("Close Key = {} ".format(closeKey))
-print((closeKey * openKey) % f)
 
 text = 'World was on fire and no one can save me but you'
 
@@ -57,10 +56,10 @@ print(text)
 
 encodedText = encode(text, closeKey, N)
 
-print(encodedText)
+print("Encoded text: %s" % encodedText)
 
 decodedText = decode(encodedText, openKey, N)
 
-print(decodedText)
+print("Decoded text: %s" % decodedText)
 
 

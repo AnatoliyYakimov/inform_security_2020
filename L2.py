@@ -41,14 +41,29 @@ def decode(stringToEncode, key):
 
     return ''.join(result)
 
-text = 'World would run better if it runnaway'
 
-key = 'John Siena'
+encodeOrDecodeFlag = input('Encode/decode? ')
 
-encodedText = encode(text, key)
+if encodeOrDecodeFlag.upper() != 'ENCODE' and encodeOrDecodeFlag.upper() != 'DECODE':
+    print('Expected ENCODE or DECODE value')
+    exit(1)
 
-print('Encoded text: "{}"'.format(encodedText))
+text = input('Phrase to encode/decode: ');
 
-decodedText = decode(encodedText, key)
+key = input('Key to encode/decode: ')
 
-print('Decoded text: "{}"'.format(decodedText))
+
+if encodeOrDecodeFlag.upper() == 'ENCODE':
+    encodedText = encode(text, key)
+    print('Encoded text: "{}"'.format(encodedText))
+
+elif encodeOrDecodeFlag.upper() == 'DECODE':
+    decodedText = decode(text, key)
+    print('Decoded text: "{}"'.format(decodedText))
+
+
+
+
+
+
+
